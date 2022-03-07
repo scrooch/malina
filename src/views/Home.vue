@@ -9,7 +9,7 @@
         >
         </v-img>
       </v-col>
-      <v-col align-self="center" sm="12" md="4" class="mx-auto">
+      <v-col align-self="center" sm="12" md="4">
         <v-card>
           <v-card-text>
             Obiekt Malinowa Przystań domek drewniany z ruską banią położony jest
