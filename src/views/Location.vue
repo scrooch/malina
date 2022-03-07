@@ -1,28 +1,30 @@
 <template>
-  <v-timeline class="ml-16 mr-16">
-    <v-timeline-item
-      v-for="(year, i) in years"
-      :key="i"
-      :color="year.color"
-      small
-    >
-      <template v-slot:opposite>
-        <span
-          :class="`headline font-weight-bold ${year.color}--text`"
-          v-text="year.year"
-        ></span>
-      </template>
-      <div class="py-4">
-        <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
-          {{ year.title }}
-        </h2>
-        <v-img :src="year.image" height="200px" width="800px" />
-        <div>
-          {{ year.text }}
+  <v-container>
+    <v-timeline>
+      <v-timeline-item
+        v-for="(year, i) in years"
+        :key="i"
+        :color="year.color"
+        small
+      >
+        <template v-slot:opposite>
+          <span
+            :class="`headline font-weight-bold ${year.color}--text`"
+            v-text="year.year"
+          ></span>
+        </template>
+        <div class="py-4">
+          <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
+            {{ year.title }}
+          </h2>
+          <v-img :src="year.image"/>
+          <div>
+            {{ year.text }}
+          </div>
         </div>
-      </div>
-    </v-timeline-item>
-  </v-timeline>
+      </v-timeline-item>
+    </v-timeline>
+  </v-container>
 </template>
 
 <script>
