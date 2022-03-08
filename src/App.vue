@@ -4,9 +4,41 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Malinowa przystań</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn class="grey" elevation="5" shaped @click="goToBooking()">
-        Zarezerwuj
+      <v-btn class="grey" elevation="5" shaped @click.stop="dialog = true">
+        Open Dialog
       </v-btn>
+
+      <v-dialog v-model="dialog" max-width="350">
+        <v-card>
+          <v-card-title class="text-h5"> Rezerwacja </v-card-title>
+
+          <v-card-text>
+            Jeśli chcesz zarezerwować pobyt w malinowej przystani wbierz jendą z
+            opcji:
+          </v-card-text>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+
+            <v-btn
+              color="green darken-1"
+              text
+              @click="dialog = false"
+              :to="'/kontakt'"
+            >
+              Kontakt (10% discount)
+            </v-btn>
+
+            <v-btn
+              color="green darken-1"
+              text
+              @click="(dialog = false), goToBooking()"
+            >
+              Booking
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" fixed temporary>
       <v-container>
@@ -39,9 +71,11 @@ export default {
   data: () => ({
     drawer: null,
     selectedItem: 1,
+    dialog: false,
     urls: [
       { name: "domek", link: "/", icon: "mdi-home-variant" },
       { name: "okolica", link: "/okolica", icon: "mdi-ticket" },
+      { name: "kontakt", link: "/kontakt", icon: "mdi-book-account" },
     ],
   }),
   methods: {

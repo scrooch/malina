@@ -17,7 +17,7 @@
           <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
             {{ year.title }}
           </h2>
-          <v-img :src="year.image"/>
+          <v-img :src="year.image" />
           <div>
             {{ year.text }}
           </div>

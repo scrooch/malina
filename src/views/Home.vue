@@ -6,6 +6,7 @@
           :src="'https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/283219524.jpg?k=63787b617f31ad527a2d80a283725a5beeab9928fec0154d4ed7ab4954cf8ba5&o=&hp=1'"
           class="white--text align-end"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.3)"
+          transition="scroll-x-transition"
         >
         </v-img>
       </v-col>
@@ -30,43 +31,14 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col sm="12" md="3">
+      <v-col sm="12" md="3" v-for="(photo, i) in photos" :key="i">
         <v-img
-          :src="'https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/283220184.jpg?k=a6ac5ce76fd9ef8a79911a56a5645500789c3d6b188b678b88fb35298ec7d7e5&o=&hp=1'"
+          :src="photo.url_location"
           class="white--text align-end"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.2)"
           height="400px"
           width="400px"
-        >
-        </v-img>
-      </v-col>
-      <v-col sm="12" md="3">
-        <v-img
-          :src="'https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/304143440.jpg?k=c8aa452da2b7ec507ca214df5f98af97ce97fd5add0f0bdc5c11182623da64fb&o=&hp=1'"
-          class="white--text align-end"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.2)"
-          height="400px"
-          width="400px"
-        >
-        </v-img>
-      </v-col>
-      <v-col sm="12" md="3">
-        <v-img
-          :src="'https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/304143232.jpg?k=fcf94541e661a5838ac90092ea1512a650a5de11da6f5edd83d0cdd5fdfa0763&o=&hp=1'"
-          class="white--text align-end"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.2)"
-          height="400px"
-          width="400px"
-        >
-        </v-img>
-      </v-col>
-      <v-col sm="12" md="3">
-        <v-img
-          :src="'https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/298209736.jpg?k=b215cbda089e6ec339cedbc53a5f3cfe5fe92398814c8fe5884a8e8298248dc4&o=&hp=1'"
-          class="white--text align-end"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.2)"
-          height="400px"
-          width="400px"
+          transition="scroll-x-transition"
         >
         </v-img>
       </v-col>
@@ -82,6 +54,24 @@ export default {
       images: {
         sample: require("../assets/gps.png"),
       },
+      photos: [
+        {
+          url_location:
+            "https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/283220184.jpg?k=a6ac5ce76fd9ef8a79911a56a5645500789c3d6b188b678b88fb35298ec7d7e5&o=&hp=1",
+        },
+        {
+          url_location:
+            "https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/304143440.jpg?k=c8aa452da2b7ec507ca214df5f98af97ce97fd5add0f0bdc5c11182623da64fb&o=&hp=1",
+        },
+        {
+          url_location:
+            "https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/304143232.jpg?k=fcf94541e661a5838ac90092ea1512a650a5de11da6f5edd83d0cdd5fdfa0763&o=&hp=1",
+        },
+        {
+          url_location:
+            "https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/298209736.jpg?k=b215cbda089e6ec339cedbc53a5f3cfe5fe92398814c8fe5884a8e8298248dc4&o=&hp=1",
+        },
+      ],
     };
   },
 };
