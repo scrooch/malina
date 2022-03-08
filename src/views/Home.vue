@@ -49,9 +49,6 @@
 <script>
 export default {
   name: "Home",
-  mounted() {
-    console.log(process.env.VUE_APP_GOOGLE_API);
-  },
   data() {
     return {
       images: {
