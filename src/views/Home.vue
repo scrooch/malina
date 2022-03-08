@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <v-col sm="12" md="4">
+      <v-col sm="12" md="6">
         <v-img
           :src="'https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/283219524.jpg?k=63787b617f31ad527a2d80a283725a5beeab9928fec0154d4ed7ab4954cf8ba5&o=&hp=1'"
           class="white--text align-end"
@@ -9,7 +9,7 @@
         >
         </v-img>
       </v-col>
-      <v-col align-self="center" sm="12" md="4">
+      <v-col align-self="center" sm="12" md="6">
         <v-card>
           <v-card-text>
             Obiekt Malinowa Przystań domek drewniany z ruską banią położony jest
@@ -27,9 +27,6 @@
             znajduje się 45 km od obiektu Malinowa Przystań domek drewniany z.
           </v-card-text>
         </v-card>
-      </v-col>
-      <v-col sm="12" md="4" align-self="center">
-        <temperature />
       </v-col>
     </v-row>
     <v-row>
@@ -78,7 +75,6 @@
 </template>
 
 <script>
-import temperature from "@/components/temperature";
 export default {
   name: "Home",
   data() {
@@ -87,9 +83,6 @@ export default {
         sample: require("../assets/gps.png"),
       },
     };
-  },
-  components: {
-    temperature,
   },
 };
 </script>
