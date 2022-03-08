@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="344" outlined>
+  <v-card class="mx-auto my-2" max-width="344" outlined>
     <v-list-item three-line>
       <v-list-item-content>
         <div class="text-overline mb-4">Kontakt</div>

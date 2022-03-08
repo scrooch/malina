@@ -5,7 +5,7 @@
       <v-toolbar-title>Malinowa przystań</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn class="grey" elevation="5" shaped @click.stop="dialog = true">
-        Open Dialog
+        Rezerwuj
       </v-btn>
 
       <v-dialog v-model="dialog" max-width="350">
