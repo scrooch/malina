@@ -1,31 +1,23 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app class="grey lighten-1" flat>
+    <v-app-bar app flat>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Malinowa przystań</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn class="grey" elevation="5" shaped @click.stop="dialog = true">
+      <v-btn elevation="5" text rounded @click.stop="dialog = true">
         Rezerwuj
       </v-btn>
-
       <v-dialog v-model="dialog" max-width="350">
         <v-card>
-          <v-card-title class="text-h5"> Rezerwacja </v-card-title>
+          <v-card-title> Rezerwacja </v-card-title>
 
           <v-card-text>
             Jeśli chcesz zarezerwować pobyt w malinowej przystani wbierz jendą z
             opcji:
           </v-card-text>
-
           <v-card-actions>
             <v-spacer></v-spacer>
-
-            <v-btn
-              color="green darken-1"
-              text
-              @click="dialog = false"
-              :to="'/kontakt'"
-            >
+            <v-btn text @click="dialog = false" :to="'/kontakt'">
               Kontakt (10% discount)
             </v-btn>
 
@@ -41,8 +33,8 @@
       </v-dialog>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" fixed temporary>
-      <v-container>
-        <v-card class="mx-auto" max-width="300" tile>
+      <v-layout fill-height column justify-space-between>
+        <v-container>
           <v-list dense>
             <v-subheader>Menu</v-subheader>
             <v-list-item-group v-model="selectedItem" color="primary">
@@ -56,10 +48,13 @@
               </v-list-item>
             </v-list-item-group>
           </v-list>
-        </v-card>
-      </v-container>
+        </v-container>
+        <v-btn elevation="5" @click="toggleTheme" text rounded
+          >Zmień motyw strony</v-btn
+        >
+      </v-layout>
     </v-navigation-drawer>
-    <v-main class="grey lighten-2">
+    <v-main>
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -82,6 +77,9 @@ export default {
     goToBooking() {
       window.location.href =
         "https://www.booking.com/hotel/pl/malinowa-przystan.pl.html?aid=397594;label=gog235jc-1DCAEoggI46AdIHlgDaLYBiAEBmAEeuAEXyAEM2AED6AEB-AECiAIBqAIDuAKi24eRBsACAdICJGYwNjFhNmJmLTViODUtNGExOS04ZjRmLTI3MTA1YWRlMjVjZtgCBOACAQ;sid=c2d80d131aa629e5721cdbec8a07f8b8;dist=0;group_adults=2;group_children=0;hapos=1;hpos=1;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1646390769;srpvid=ed3d4bb8752a023b;type=total;ucfs=1&#hotelTmpl";
+    },
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };

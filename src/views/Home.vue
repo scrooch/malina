@@ -12,7 +12,7 @@
       </v-col>
       <v-col align-self="center" sm="12" md="6">
         <v-card>
-          <v-card-text>
+          <v-card-text class="font-weight-bold">
             Obiekt Malinowa Przystań domek drewniany z ruską banią położony jest
             w miejscowości Strzepcz i oferuje prywatny basen, balkon oraz widok
             na jezioro. Obiekt oddalony jest o 46 km od miejscowści Chałupy. Na

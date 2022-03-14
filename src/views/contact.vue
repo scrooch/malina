@@ -10,7 +10,7 @@
       />
     </v-col>
     <v-col sm="12" md="5">
-      <v-card class="mx-8 mt-15" outlined >
+      <v-card class="mx-8 mt-15" outlined>
         <v-list-item three-line>
           <v-list-item-content>
             <div class="text-overline mb-4">Kontakt</div>
