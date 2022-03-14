@@ -17,13 +17,14 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn text @click="dialog = false" :to="'/kontakt'">
+            <v-btn text rounded @click="dialog = false" :to="'/kontakt'">
               Kontakt (10% discount)
             </v-btn>
 
             <v-btn
-              color="green darken-1"
+              color="blue darken-1"
               text
+              rounded
               @click="(dialog = false), goToBooking()"
             >
               Booking
@@ -43,7 +44,7 @@
                   <v-icon v-text="item.icon"></v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
-                  <v-list-title v-text="item.name"></v-list-title>
+                  <p v-text="item.name"></p>
                 </v-list-item-content>
               </v-list-item>
             </v-list-item-group>

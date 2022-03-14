@@ -2,7 +2,7 @@
   <v-container>
     <v-timeline>
       <v-timeline-item
-        v-for="(year, i) in years"
+        v-for="(year, i) in info.data.Location"
         :key="i"
         :color="year.color"
         small
@@ -28,8 +28,20 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
+  mounted() {
+    axios
+      .get("https://exact-dove-16.hasura.app/api/rest/location", {
+        headers: {
+          "content-type": "application/json",
+          "x-hasura-admin-secret": `${process.env.VUE_APP_HASURA_SECRET}`,
+        },
+      })
+      .then((response) => (this.info = response));
+  },
   data: () => ({
+    info: "",
     years: [
       {
         color: "cyan",
