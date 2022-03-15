@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Location from "@/views/Location";
 import contact from "@/views/contact";
+import AdminPanel from "@/views/AdminPanel";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/kontakt",
     name: "Kontakt",
     component: contact,
+  },
+  {
+    path: "/admin",
+    name: "AdminPanel",
+    component: AdminPanel,
   },
 ];
 
