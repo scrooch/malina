@@ -50,9 +50,19 @@
             </v-list-item-group>
           </v-list>
         </v-container>
-        <v-btn elevation="5" @click="toggleTheme" text rounded
-          >Zmień motyw strony</v-btn
-        >
+        <v-container>
+          <v-btn elevation="5" @click="toggleTheme" text rounded
+            >Zmień motyw strony</v-btn
+          >
+          <v-btn
+            style="margin-top: 5px"
+            elevation="5"
+            @click="$router.push('/admin')"
+            text
+            rounded
+            >Panel Administracyjny</v-btn
+          >
+        </v-container>
       </v-layout>
     </v-navigation-drawer>
     <v-main>

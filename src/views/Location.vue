@@ -30,8 +30,8 @@
 <script>
 import axios from "axios";
 export default {
-  mounted() {
-    axios
+  async mounted() {
+    await axios
       .get("https://exact-dove-16.hasura.app/api/rest/location", {
         headers: {
           "content-type": "application/json",

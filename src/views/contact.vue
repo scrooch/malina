@@ -1,50 +1,52 @@
 <template>
-  <v-row>
-    <v-col sm="12" md="7" align="center" justify="center">
-      <v-img
-        class="ma-4"
-        max-height="500px"
-        max-width="800px"
-        src="../assets/gps.png"
-        @click="goToBooking()"
-      />
-    </v-col>
-    <v-col sm="12" md="5">
-      <v-card class="mx-8 mt-15" outlined>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <div class="text-overline mb-4">Kontakt</div>
-            <v-list-item-title class="text-h5 mb-1">
-              Iwona Maszota
-            </v-list-item-title>
-            <v-list-item-subtitle>+48 606 740 356</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+  <v-container
+    ><v-row>
+      <v-col sm="12" md="7" align="center" justify="center">
+        <v-img
+          class="ma-4"
+          max-height="500px"
+          max-width="800px"
+          src="../assets/gps.png"
+          @click="goToBooking()"
+        />
+      </v-col>
+      <v-col sm="12" md="5">
+        <v-card class="mx-8 mt-15" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <div class="text-overline mb-4">Kontakt</div>
+              <v-list-item-title class="text-h5 mb-1">
+                Iwona Maszota
+              </v-list-item-title>
+              <v-list-item-subtitle>+48 606 740 356</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-        <v-card-actions>
-          <v-btn href="tel:'+48 606 740 356">Zadzwoń</v-btn>
-        </v-card-actions>
-      </v-card>
-      <v-card class="mx-8 mt-8" outlined>
-        <v-list-item three-line>
-          <v-list-item-content>
-            <div class="text-overline mb-4">Adres</div>
-            <v-list-item-title class="text-h5 mb-1">
-              Feliksa Miotka 44
-            </v-list-item-title>
-            <v-list-item-subtitle>84-222 Strzepcz</v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+          <v-card-actions>
+            <v-btn href="tel:'+48 606 740 356">Zadzwoń</v-btn>
+          </v-card-actions>
+        </v-card>
+        <v-card class="mx-8 mt-8" outlined>
+          <v-list-item three-line>
+            <v-list-item-content>
+              <div class="text-overline mb-4">Adres</div>
+              <v-list-item-title class="text-h5 mb-1">
+                Feliksa Miotka 44
+              </v-list-item-title>
+              <v-list-item-subtitle>84-222 Strzepcz</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
 
-        <v-card-actions>
-          <v-btn
-            href="https://www.google.pl/maps/dir//54.4665237,18.015875/@54.4666633,18.0154167,200m/data=!3m1!1e3!4m2!4m1!3e0"
-            >Nawiguj</v-btn
-          >
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+          <v-card-actions>
+            <v-btn
+              href="https://www.google.pl/maps/dir//54.4665237,18.015875/@54.4666633,18.0154167,200m/data=!3m1!1e3!4m2!4m1!3e0"
+              >Nawiguj</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row></v-container
+  >
 </template>
 
 <script>

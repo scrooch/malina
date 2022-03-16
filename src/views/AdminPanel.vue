@@ -38,7 +38,6 @@
 
 <script>
 import LoginUser from "../components/LoginUser";
-import axios from "axios";
 export default {
   name: "AdminPanel",
   components: {
@@ -55,21 +54,11 @@ export default {
       required: (value) => !!value || "Required.",
     },
   }),
-  mounted() {
-    axios
-      .get("https://exact-dove-16.hasura.app/api/rest/user", {
-        headers: {
-          "content-type": "application/json",
-          "x-hasura-admin-secret": `${process.env.VUE_APP_HASURA_SECRET}`,
-        },
-      })
-      .then((response) => (this.credentials = response));
-  },
   methods: {
     validate() {
       if (
-        this.user === this.credentials.data.users[0].user &&
-        this.password === this.credentials.data.users[0].password
+        this.user === `${process.env.VUE_APP_LOGIN}` &&
+        this.password === `${process.env.VUE_APP_PASSWORD}`
       ) {
         this.is_login = true;
         this.size = 12;
