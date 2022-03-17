@@ -55,7 +55,7 @@
                 <v-col cols="12" sm="8" md="8">
                   <v-text-field
                     v-model="form_distance"
-                    :rules="nameRules"
+                    :rules="floatRules"
                     label="Distance"
                     required
                   ></v-text-field>
@@ -93,6 +93,9 @@
         </v-card>
       </v-dialog>
       <v-btn @click="get_data">Odświerz dane</v-btn>
+      <v-snackbar v-model="snackbar" :timeout="timeout" color="pink accent-4">
+        {{ snackbar_text }}
+      </v-snackbar>
     </v-container>
   </v-container>
 </template>
@@ -102,6 +105,9 @@ import axios from "axios";
 export default {
   name: "LoginUser",
   data: () => ({
+    timeout: 2000,
+    snackbar: false,
+    snackbar_text: "Dane zostaly wyslane do bazy",
     loading: "",
     locations: "",
     headers: [
@@ -121,7 +127,8 @@ export default {
     form_text: "",
     form_title: "",
     form_distance: "",
-    nameRules: [(v) => !!v || "Its required"],
+    nameRules: [(v) => !!v || "Pole wymagane!"],
+    floatRules: [(v) => (v >= 0 && !!v) || "Wprowadź ilość kilometrów"],
     errors: [],
     post_return: "",
     dialog: false,
@@ -172,13 +179,12 @@ export default {
               },
             }
           )
-          .then(
-            (response) => (this.post_return = response),
-            (this.dialog = false)
-          );
+          .then((response) => (this.post_return = response));
       } catch (e) {
         this.errors.push(e);
       }
+      this.dialog = false;
+      this.snackbar = true;
     },
   },
 };
