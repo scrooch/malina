@@ -4,7 +4,7 @@
       :active="loading"
       :indeterminate="loading"
       fixed
-      color="deep-purple accent-4"
+      color="pink accent-4"
     ></v-progress-linear>
     <v-timeline>
       <v-timeline-item
