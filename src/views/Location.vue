@@ -1,5 +1,11 @@
 <template>
   <v-container>
+    <v-progress-linear
+      :active="loading"
+      :indeterminate="loading"
+      fixed
+      color="deep-purple accent-4"
+    ></v-progress-linear>
     <v-timeline>
       <v-timeline-item
         v-for="(data_info, i) in info"
@@ -33,6 +39,7 @@
 import axios from "axios";
 export default {
   async mounted() {
+    this.loading = true;
     await axios
       .get("https://exact-dove-16.hasura.app/api/rest/location", {
         headers: {
@@ -49,10 +56,12 @@ export default {
       parseFloat(a[1].year) > parseFloat(b[1].year) ? 1 : -1
     );
     this.info = sortable;
+    this.loading = false;
   },
   data: () => ({
     info: "",
     locations: "",
+    loading: false,
   }),
 };
 </script>

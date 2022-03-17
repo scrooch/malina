@@ -1,5 +1,11 @@
 <template>
   <v-container>
+    <v-progress-linear
+      :active="loading"
+      :indeterminate="loading"
+      fixed
+      color="deep-purple accent-4"
+    ></v-progress-linear>
     <v-data-table
       :headers="headers"
       :items="locations.data.Location"
@@ -96,6 +102,7 @@ import axios from "axios";
 export default {
   name: "LoginUser",
   data: () => ({
+    loading: "",
     locations: "",
     headers: [
       {
@@ -120,6 +127,7 @@ export default {
     dialog: false,
   }),
   async mounted() {
+    this.loading = true;
     await axios
       .get("https://exact-dove-16.hasura.app/api/rest/location", {
         headers: {
@@ -128,12 +136,14 @@ export default {
         },
       })
       .then((response) => (this.locations = response));
+    this.loading = false;
   },
   methods: {
     handleClick(value) {
       console.log(value.title);
     },
     async get_data() {
+      this.loading = true;
       await axios
         .get("https://exact-dove-16.hasura.app/api/rest/location", {
           headers: {
@@ -142,6 +152,7 @@ export default {
           },
         })
         .then((response) => (this.locations = response));
+      this.loading = false;
     },
     async post_data() {
       try {
