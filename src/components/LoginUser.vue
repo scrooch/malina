@@ -99,15 +99,15 @@ export default {
     locations: "",
     headers: [
       {
-        text: "Image",
+        text: "Distance",
         align: "start",
-        sortable: false,
-        value: "image",
+        sortable: true,
+        value: "year",
       },
       { text: "Color", value: "color" },
-      { text: "Text", value: "text" },
       { text: "Title", value: "title" },
-      { text: "Distance", value: "year" },
+      { text: "Text", value: "text" },
+      { text: "Image", value: "image" },
     ],
     form_image: "",
     form_color: "",
@@ -119,8 +119,8 @@ export default {
     post_return: "",
     dialog: false,
   }),
-  mounted() {
-    axios
+  async mounted() {
+    await axios
       .get("https://exact-dove-16.hasura.app/api/rest/location", {
         headers: {
           "content-type": "application/json",
@@ -133,8 +133,8 @@ export default {
     handleClick(value) {
       console.log(value.title);
     },
-    get_data() {
-      axios
+    async get_data() {
+      await axios
         .get("https://exact-dove-16.hasura.app/api/rest/location", {
           headers: {
             "content-type": "application/json",
