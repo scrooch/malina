@@ -25,7 +25,7 @@
           >
             {{ data_info[1].title }}
           </h2>
-          <v-img :src="data_info[1].image" />
+          <v-img max-height="290px" max-width="390px" :src="data_info[1].image" />
           <div>
             {{ data_info[1].text }}
           </div>
