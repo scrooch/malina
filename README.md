@@ -1,6 +1,6 @@
 # malina_vue
 
-##About project
+## About project
 
 Malina is a open sorce project created for the company "Malinowa Przystań". The purpose of the website is to inform the client about:
 - On-site amenities
